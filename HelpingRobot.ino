@@ -1,10 +1,10 @@
 #include <NewPing.h>
 
-#define PING_PINT 8 
-#define PING_PINE 9
+#define PIN_T 8 
+#define PIN_E 9
 #define PING_MAX_DISTANCE 200 // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
 
-NewPing sonar(PING_PINT, PING_PINE, PING_MAX_DISTANCE); // NewPing setup of pin and maximum distance.
+NewPing sonar(PIN_T, PIN_E, PING_MAX_DISTANCE); // NewPing setup of pin and maximum distance.
 
 #define MAX_DISTANCE_FROM_OBSTACLE_IN_CMS 30 // Change this if needed, depending on position of the ultrasonic sensor in the robot chasis
 
@@ -16,7 +16,6 @@ pinMode(13,OUTPUT);   //left motors forward
 pinMode(12,OUTPUT);   //left motors reverse
 pinMode(11,OUTPUT);   //right motors forward
 pinMode(10,OUTPUT);   //right motors reverse
-//pinMode(9,OUTPUT);   //Led
 Serial.begin(9600);
  
 }
@@ -81,7 +80,6 @@ void drive_forward() {
 void turn_right() {
   digitalWrite(13, HIGH); 
   digitalWrite(12, LOW); 
-  
   digitalWrite(10, LOW); 
   digitalWrite(11, HIGH); 
 }
